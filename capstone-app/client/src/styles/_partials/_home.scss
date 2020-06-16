@@ -1,0 +1,14 @@
+@import "./variables";
+@import "./variables";
+
+.home {
+  width: 80%;
+  margin: auto auto;
+
+  color: white;
+
+  &__greeting {
+    font-size: 4rem;
+    font-weight: 200;
+  }
+}

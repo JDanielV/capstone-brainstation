@@ -1,1 +1,69 @@
-/* No CSS *//*# sourceMappingURL=main.css.map */
+.header {
+  color: white;
+  font-size: 1rem;
+}
+
+.header__ul {
+  list-style: none;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__ul-separator {
+  font-size: 1.8rem;
+}
+
+.home {
+  width: 80%;
+  margin: auto auto;
+  color: white;
+}
+
+.home__greeting {
+  font-size: 4rem;
+  font-weight: 200;
+}
+
+body {
+  font-family: "Barlow", sans-serif;
+  font-weight: 300;
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(111deg, #246655, #0e2d25);
+  background-size: 400% 400%;
+  -webkit-animation: AnimationName 16s ease infinite;
+  animation: AnimationName 16s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+/*# sourceMappingURL=main.css.map */

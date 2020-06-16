@@ -1,0 +1,22 @@
+@import "./variables";
+
+.header {
+  color: white;
+  font-size: $normal-font;
+
+  &__ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  &__li {
+    // text-transform: uppercase;
+  }
+
+  &__ul-separator {
+    font-size: 1.8rem;
+  }
+}
