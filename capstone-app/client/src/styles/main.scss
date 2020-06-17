@@ -1,18 +1,27 @@
 @import "./_partials/variables";
 @import "./_partials/header";
 @import "./_partials/home";
+@import "./_partials/user-selection";
 
 body {
   font-family: "Barlow", sans-serif;
   font-weight: 300;
   padding: 0;
   margin: 0;
-  background: linear-gradient(111deg, #246655, #0e2d25);
-  background-size: 400% 400%;
 
-  -webkit-animation: AnimationName 16s ease infinite;
-  -moz-animation: AnimationName 16s ease infinite;
-  animation: AnimationName 16s ease infinite;
+  background: linear-gradient(
+    111deg,
+    #246655,
+    #0d251f,
+    #48b9a1,
+    #e6514f,
+    #58b624
+  );
+  background-size: 1000% 1000%;
+
+  -webkit-animation: AnimationName 50s ease infinite;
+  -moz-animation: AnimationName 50s ease infinite;
+  animation: AnimationName 50s ease infinite;
 }
 
 @-webkit-keyframes AnimationName {

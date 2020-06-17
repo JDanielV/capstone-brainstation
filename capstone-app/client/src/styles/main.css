@@ -1,6 +1,6 @@
 .header {
   color: white;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .header__ul {
@@ -9,12 +9,14 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.header__li {
+  width: 49%;
+  text-align: center;
 }
 
 .header__ul-separator {
@@ -28,8 +30,75 @@
 }
 
 .home__greeting {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 200;
+  margin: 5rem 0;
+}
+
+.home__question {
+  font-size: 2rem;
+  font-weight: 200;
+  width: 80%;
+}
+
+.home__change-user {
+  font-size: 1.2rem;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  margin-top: 8rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.user-selection {
+  width: 80%;
+  margin: auto auto;
+  color: white;
+}
+
+.user-selection__greeting {
+  font-size: 3rem;
+  font-weight: 200;
+  margin-top: 5rem;
+  margin-bottom: 0;
+}
+
+.user-selection__welcome {
+  font-size: 2rem;
+  font-weight: 200;
+  width: 100%;
+  margin-top: 0;
+}
+
+.user-selection__cta {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 4rem;
+}
+
+.user-selection__ul {
+  padding: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: auto;
+  max-height: 15rem;
+}
+
+.user-selection__li {
+  margin: 1rem 0;
+  font-size: 1.2rem;
+}
+
+.user-selection__add-new {
+  margin: 1rem 0;
+  font-size: 1.2rem;
 }
 
 body {
@@ -37,10 +106,10 @@ body {
   font-weight: 300;
   padding: 0;
   margin: 0;
-  background: linear-gradient(111deg, #246655, #0e2d25);
-  background-size: 400% 400%;
-  -webkit-animation: AnimationName 16s ease infinite;
-  animation: AnimationName 16s ease infinite;
+  background: linear-gradient(111deg, #246655, #0d251f, #48b9a1, #e6514f, #58b624);
+  background-size: 1000% 1000%;
+  -webkit-animation: AnimationName 50s ease infinite;
+  animation: AnimationName 50s ease infinite;
 }
 
 @-webkit-keyframes AnimationName {

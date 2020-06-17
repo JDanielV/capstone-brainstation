@@ -8,12 +8,12 @@
     list-style: none;
     padding: 0;
     display: flex;
-    justify-content: space-evenly;
     align-items: center;
   }
 
   &__li {
-    // text-transform: uppercase;
+    width: 49%;
+    text-align: center;
   }
 
   &__ul-separator {

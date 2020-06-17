@@ -1,0 +1,46 @@
+@import "./variables";
+
+.user-selection {
+  width: 80%;
+  margin: auto auto;
+  color: white;
+
+  &__greeting {
+    font-size: 3rem;
+    font-weight: 200;
+    margin-top: 5rem;
+    margin-bottom: 0;
+  }
+
+  &__welcome {
+    font-size: $header-font;
+    font-weight: 200;
+    width: 100%;
+    margin-top: 0;
+  }
+
+  &__cta {
+    font-size: $normal-font;
+    font-weight: 500;
+    margin-top: 4rem;
+  }
+
+  &__ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    max-height: 15rem;
+  }
+
+  &__li {
+    margin: 1rem 0;
+    font-size: $normal-font;
+  }
+
+  &__add-new {
+    margin: 1rem 0;
+    font-size: $normal-font;
+  }
+}

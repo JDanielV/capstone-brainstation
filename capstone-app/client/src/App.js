@@ -1,15 +1,24 @@
 import React from "react";
 import "./styles/main.css";
-import Header from "./components/header";
-import Home from "./components/home";
+import UserSelection from "./components/UserSelection";
+import Home from "./components/Home";
+import { Route, Redirect } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <Header />
-      <Home />
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    users: [],
+    userDetails: [],
+  };
+
+  render() {
+    return (
+      <div className="App">
+        <Redirect exact from="/" to="/users" />
+        <UserSelection />
+        <Route path="/users/:id" render={(props) => <Home {...props} />} />
+      </div>
+    );
+  }
 }
 
 export default App;
