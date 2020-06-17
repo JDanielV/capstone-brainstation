@@ -41,6 +41,11 @@
   width: 80%;
 }
 
+.home__link {
+  color: white;
+  text-decoration: none;
+}
+
 .home__change-user {
   font-size: 1.2rem;
   display: inline-block;
@@ -89,6 +94,11 @@
           flex-direction: column;
   height: auto;
   max-height: 15rem;
+}
+
+.user-selection__link {
+  color: white;
+  text-decoration: none;
 }
 
 .user-selection__li {

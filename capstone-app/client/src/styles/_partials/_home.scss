@@ -18,6 +18,11 @@
     width: 80%;
   }
 
+  &__link {
+    color: white;
+    text-decoration: none;
+  }
+
   &__change-user {
     font-size: $normal-font;
     display: inline-block;
