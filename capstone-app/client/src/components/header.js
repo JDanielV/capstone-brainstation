@@ -1,13 +1,22 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ user, entriesList }) => {
+  console.log(entriesList);
+  if (user.id === undefined) {
+    return <p>Loading...</p>;
+  }
   return (
     <header className="header">
       <nav className="header__nav">
         <ul className="header__ul">
-          <li className="header__li">New Entry</li>
+          <Link to="/users/:id/new-entry" className="header__link">
+            <li className="header__li">New Entry</li>
+          </Link>
           <span className="header__ul-separator">|</span>
-          <li className="header__li">Browse Journal</li>
+          <Link to={`/users/${user.id}/entries`} className="header__link">
+            <li className="header__li">Browse Journal</li>
+          </Link>
         </ul>
       </nav>
     </header>

@@ -12,8 +12,14 @@
   }
 
   &__li {
-    width: 49%;
     text-align: center;
+  }
+
+  &__link {
+    width: 49%;
+    color: white;
+    text-decoration: none;
+    justify-content: end;
   }
 
   &__ul-separator {

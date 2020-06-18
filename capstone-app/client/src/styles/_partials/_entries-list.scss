@@ -1,0 +1,72 @@
+@import "./variables";
+
+.entries-list {
+  margin-top: 4rem;
+  &__link {
+    color: white;
+    text-decoration: none;
+  }
+
+  &__back-container {
+    height: 2.2rem;
+    display: flex;
+    align-items: center;
+    width: 6.5rem;
+  }
+
+  &__back-arrow {
+    font-size: 2.2rem;
+    padding-bottom: 0.5rem;
+  }
+
+  &__back-text {
+    font-size: $normal-font;
+    margin-left: 0.5rem;
+  }
+
+  &__title {
+    font-size: $header-font;
+    font-weight: 300;
+  }
+
+  &__ul {
+    padding: 0;
+    list-style: none;
+  }
+
+  &__li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+    padding: 1.5rem 0;
+
+    &-text-container {
+      width: 60%;
+    }
+
+    &-title {
+      margin-top: 0;
+      margin-bottom: 1rem;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: wrap;
+    }
+
+    &-preview {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: wrap;
+      margin: 0;
+      height: 3.7rem;
+    }
+
+    &-emotions-chart {
+      height: 6rem;
+      width: 6rem;
+      background-color: $dark-bg;
+      border-radius: 10px;
+    }
+  }
+}

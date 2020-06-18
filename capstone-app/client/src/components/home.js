@@ -1,32 +1,77 @@
 import React from "react";
 import Header from "./Header";
-import { Link } from "react-router-dom";
+import UserGreeting from "./UserGreeting";
+import { Route } from "react-router-dom";
+import axios from "axios";
+import EntriesList from "./EntriesList";
 
 class Home extends React.Component {
-  componentDidUpdate(previousProps) {
-    const oldUserId = previousProps.match.params.id;
-    const newUserId = this.props.match.params.id;
-    if (newUserId === oldUserId) {
-      console.log("same user ID");
-    } else {
-      console.log("getting new user details");
-      this.props.getEntriesList(newUserId);
-      this.props.getUserDetails(newUserId);
-    }
+  apiLink = "http://localhost:5000";
+  usersEndpoint = "/users";
+
+  state = {
+    userDetails: [],
+    entriesList: [],
+  };
+
+  getUserDetails = (id) => {
+    axios.get(`${this.apiLink}${this.usersEndpoint}/${id}`).then((response) => {
+      this.setState({ userDetails: response.data[0] });
+    });
+  };
+
+  getEntriesList = (id) => {
+    axios
+      .get(`${this.apiLink}${this.usersEndpoint}/${id}/entries`)
+      .then((response) => {
+        this.setState({ entriesList: response.data });
+      });
+  };
+
+  componentDidMount() {
+    this.getUserDetails(this.props.match.params.id);
+    this.getEntriesList(this.props.match.params.id);
   }
+
+  componentWillUnmount() {
+    console.log("Home has unmounted");
+  }
+  // componentDidUpdate(previousProps) {
+  //   const oldUserId = previousProps.match.params.id;
+  //   const newUserId = this.props.match.params.id;
+  //   if (newUserId === oldUserId) {
+  //     console.log("same user ID");
+  //   } else {
+  //     console.log("getting new user details");
+  //     this.props.getEntriesList(newUserId);
+  //     this.props.getUserDetails(newUserId);
+  //   }
+  // }
   render() {
-    console.log(this.props.match.params.id);
     return (
       <>
-        <Header />
+        <Header
+          user={this.state.userDetails}
+          entriesList={this.state.entriesList}
+        />
         <section className="home">
-          <h1 className="home__greeting">
-            Good evening, {this.props.userDetails.username}.
-          </h1>
-          <h3 className="home__question">Got something on your mind?</h3>
-          <Link to="/users" className="home__link">
-            <span className="home__change-user">Not Daniel?</span>
-          </Link>
+          <Route
+            path="/users/:id"
+            exact
+            render={(props) => (
+              <UserGreeting {...props} user={this.state.userDetails} />
+            )}
+          />
+          <Route
+            path="/users/:id/entries"
+            render={(props) => (
+              <EntriesList
+                {...props}
+                entriesList={this.state.entriesList}
+                user={this.state.userDetails}
+              />
+            )}
+          />
         </section>
       </>
     );
