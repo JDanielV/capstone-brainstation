@@ -7,7 +7,7 @@ const postEntry = (entry) => {
 
   // Creating the new "Entry" object with info passed
   const newEntry = {
-    postId: uuid(),
+    entryId: uuid(),
     id: entry.id,
     title: entry.title,
     content: entry.content,
@@ -26,10 +26,13 @@ const postEntry = (entry) => {
   // Using local array of entries to overwrite data.json
   const userIndex = parsedData.map((user) => user.id).indexOf(newEntry.id);
 
+  // Overwriting the old user details with the updated user details (locally)
   parsedData.splice(userIndex, 1, activeUserData);
 
+  // Overwriting the data.json file
   fs.writeFileSync("./model/data.json", JSON.stringify(parsedData));
 
+  // Returns the added entry just for reference
   return newEntry;
 };
 
