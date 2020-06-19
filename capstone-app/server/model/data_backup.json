@@ -4,8 +4,7 @@
     "username": "Daniel",
     "entries": [
       {
-        "postId": "u1e1",
-        "id": "1",
+        "id": "u1e1",
         "title": "My First Entry",
         "content": "Today I'm feeling very pressured to make progress on my project, but at the same time very sleepy.",
         "context": [
@@ -17,8 +16,7 @@
         "edited": "no"
       },
       {
-        "postId": "u1e2",
-        "id": "1",
+        "id": "u1e2",
         "title": "My Second Entry",
         "content": "It's unbelievable how much I've learned in the past 3 months. It doesn't feel like it at times, but just thinking about it makes me want to continue.",
         "context": [
@@ -29,39 +27,12 @@
         "edited": "no"
       },
       {
-        "postId": "u1e3",
-        "id": "1",
+        "id": "u1e3",
         "title": "My Third Entry",
         "content": "Oh my god, the kitty has grown so much so fast",
         "context": ["https://www.instagram.com/p/CBZfuwZH2mJ/"],
         "emotions": ["Surprised"],
         "timestamp": "06/14/2020",
-        "edited": "no"
-      },
-      {
-        "postId": "f89dd81e-9664-4f91-b9b7-8c08101c0975",
-        "id": "1",
-        "title": "Entry From Postman",
-        "content": "This is an entry being posted directly from Postman to test the API's POST route",
-        "context": [
-          "https://open.spotify.com/track/4ejyZ4uJEXUURcgKp1kP8v?si=DB10jxxgQSiT8NaSkP5Jfw",
-          "https://open.spotify.com/track/2jo3etFarByI6akx5cyPDg?si=jdqt66wYTc-MSrSXmN41jQ"
-        ],
-        "emotions": ["Motivated", "Stressed"],
-        "timestamp": "06/19/2020",
-        "edited": "no"
-      },
-      {
-        "postId": "77dfac61-b9c5-47fe-ad1e-231aca759038",
-        "id": "1",
-        "title": "Entry From Postman - Aracely",
-        "content": "This is an entry being posted directly from Postman to test the API's POST route",
-        "context": [
-          "https://open.spotify.com/track/4ejyZ4uJEXUURcgKp1kP8v?si=DB10jxxgQSiT8NaSkP5Jfw",
-          "https://open.spotify.com/track/2jo3etFarByI6akx5cyPDg?si=jdqt66wYTc-MSrSXmN41jQ"
-        ],
-        "emotions": ["Motivated", "Stressed"],
-        "timestamp": "06/19/2020",
         "edited": "no"
       }
     ]
@@ -71,8 +42,7 @@
     "username": "Aracely",
     "entries": [
       {
-        "postId": "u2e1",
-        "id": "2",
+        "id": "u2e1",
         "title": "Back to Work",
         "content": "First week back to work since the quarantine began. I was feeling lazy to go at first, but then realized I actually missed it.",
         "context": ["https://www.instagram.com/p/CA1PjYnJKrO/"],
@@ -81,8 +51,7 @@
         "edited": "no"
       },
       {
-        "postId": "u2e2",
-        "id": "2",
+        "id": "u2e2",
         "title": "My Cat is Toxic",
         "content": "One day, this cat will be the end of me.",
         "context": ["https://www.instagram.com/p/B_L6y56JMHQ/"],
@@ -91,8 +60,7 @@
         "edited": "no"
       },
       {
-        "postId": "u2e3",
-        "id": "2",
+        "id": "u2e3",
         "title": "I Can Feel the Summer",
         "content": "Even though it's been summer for some time now, the weather seems to neglect that fact. However, we've had three sunny days in a row now! The wind is still chilly, though.",
         "context": [
@@ -100,19 +68,6 @@
         ],
         "emotions": ["Joyful", "Motivated"],
         "timestamp": "06/16/2020",
-        "edited": "no"
-      },
-      {
-        "postId": "8b984372-ccf6-48eb-962c-af16b444ca23",
-        "id": "2",
-        "title": "Entry From Postman - Aracely",
-        "content": "This is an entry being posted directly from Postman to test the API's POST route",
-        "context": [
-          "https://open.spotify.com/track/4ejyZ4uJEXUURcgKp1kP8v?si=DB10jxxgQSiT8NaSkP5Jfw",
-          "https://open.spotify.com/track/2jo3etFarByI6akx5cyPDg?si=jdqt66wYTc-MSrSXmN41jQ"
-        ],
-        "emotions": ["Motivated", "Stressed"],
-        "timestamp": "06/19/2020",
         "edited": "no"
       }
     ]

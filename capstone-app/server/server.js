@@ -7,6 +7,7 @@ const cors = require("cors");
 const getEntriesList = require("./controllers/getEntriesList");
 const getUserDetails = require("./controllers/getUserDetails");
 const getUserList = require("./controllers/getUserList");
+const postEntry = require("./controllers/postEntry");
 
 // Middleware here
 
@@ -29,5 +30,11 @@ app.get("/users/:userId/entries", (req, res) => {
 app.get("/users/:userId", (req, res) => {
   res.json(getUserDetails(req.params.userId));
 });
+
+// Route to POST new entry
+app.post("/users/:userId", (req, res) => {
+  res.json(postEntry(req.body));
+});
+
 // Listening to port 5000
 app.listen(5000, console.log("server's running on 5000"));
