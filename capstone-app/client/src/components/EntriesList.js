@@ -16,7 +16,7 @@ const EntriesList = ({ user, entriesList }) => {
         <h3 className="entries-list__title">Log of Entries</h3>
         <ul className="entries-list__ul">
           {entriesList.map((entry) => (
-            <li className="entries-list__li">
+            <li key={entry.entryId} className="entries-list__li">
               <div className="entries-list__li-text-container">
                 <h4 className="entries-list__li-title">{entry.title}</h4>
                 <p className="entries-list__li-preview">{entry.content}</p>

@@ -212,7 +212,7 @@
   margin-bottom: 1rem;
   text-overflow: ellipsis;
   overflow: hidden;
-  white-space: wrap;
+  white-space: nowrap;
 }
 
 .entries-list__li-preview {
