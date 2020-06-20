@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Header = ({ user, entriesList }) => {
-  console.log(entriesList);
   if (user.id === undefined) {
     return <p>Loading...</p>;
   }

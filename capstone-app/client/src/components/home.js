@@ -4,6 +4,7 @@ import UserGreeting from "./UserGreeting";
 import { Route } from "react-router-dom";
 import axios from "axios";
 import EntriesList from "./EntriesList";
+import NewEntryForm from "./NewEntryForm";
 
 class Home extends React.Component {
   apiLink = "http://localhost:5000";
@@ -70,6 +71,12 @@ class Home extends React.Component {
                 entriesList={this.state.entriesList}
                 user={this.state.userDetails}
               />
+            )}
+          />
+          <Route
+            path="/users/:id/new-entry"
+            render={(props) => (
+              <NewEntryForm {...props} user={this.state.userDetails} />
             )}
           />
         </section>

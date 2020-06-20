@@ -5,7 +5,7 @@ const UserSelection = ({ users }) => {
   return (
     <section className="user-selection">
       <h1 className="user-selection__greeting">Hi there,</h1>
-      <h3 className="user-selection__welcome">welcome to Capstone.</h3>
+      <h3 className="user-selection__welcome">welcome to Light Mind.</h3>
       <h3 className="user-selection__cta">Please select your name:</h3>
       <ul className="user-selection__ul">
         {users.map((user) => (

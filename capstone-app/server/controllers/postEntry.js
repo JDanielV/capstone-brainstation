@@ -11,9 +11,10 @@ const postEntry = (entry) => {
     id: entry.id,
     title: entry.title,
     content: entry.content,
-    context: entry.context,
+    contextOne: entry.contextOne,
+    contextTwo: entry.contextTwo,
     emotions: entry.emotions,
-    timestamp: entry.timestamp,
+    timestamp: Date.now(),
     edited: entry.edited,
   };
 

@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const EntriesList = ({ user, entriesList }) => {
-  console.log(entriesList);
   return (
     <>
       <div className="entries-list">
