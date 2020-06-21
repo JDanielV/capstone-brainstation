@@ -231,7 +231,7 @@
 }
 
 .entry-form {
-  margin-top: 3rem;
+  margin-top: 2rem;
   height: 33.224rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -267,13 +267,21 @@
   outline: none;
 }
 
+.entry-form__text {
+  font-size: 1rem;
+  color: white;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+
 .entry-form__textarea {
   font-family: "Barlow", sans-serif;
   font-weight: 300;
   border: 1px solid white;
   font-size: 1.2rem;
   border-radius: 4px;
-  height: 21rem;
+  height: 19rem;
   padding: 0.8rem;
   margin-bottom: 1rem;
   background-color: #0c0c0c6b;
@@ -294,7 +302,7 @@
       -ms-flex-pack: end;
           justify-content: flex-end;
   position: absolute;
-  bottom: -4rem;
+  bottom: -1rem;
   right: 0;
 }
 
@@ -306,8 +314,58 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   position: absolute;
-  bottom: -4rem;
+  bottom: -1rem;
   width: 100%;
+}
+
+.entry-form__mood-wrapper {
+  background-color: #0c0c0c6b;
+  height: 15.26rem;
+  border-radius: 5px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.entry-form__mood-buttons-wrapper {
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.entry-form__mood-button {
+  font-family: "Barlow", sans-serif;
+  font-weight: 300;
+  font-size: 1.2rem;
+  color: white;
+  width: 7rem;
+  height: 2rem;
+  border: 1px solid white;
+  border-radius: 4px;
+  background-color: transparent;
+  padding-bottom: 0.25rem;
+  margin: 0.5rem;
+  outline: none;
+  cursor: pointer;
+}
+
+.entry-form__mood-button:active {
+  background-color: white;
+  color: black;
+  font-weight: 400;
 }
 
 .entry-form__next-btn {
@@ -330,6 +388,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  cursor: pointer;
 }
 
 .entry-form__next-arrow {
@@ -359,6 +418,7 @@
       -ms-flex-align: center;
           align-items: center;
   margin-right: 2rem;
+  cursor: pointer;
 }
 
 .entry-form__back-arrow {

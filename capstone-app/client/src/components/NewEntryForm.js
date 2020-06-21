@@ -2,7 +2,6 @@ import React from "react";
 import axios from "axios";
 import EntryContent from "./EntryContent";
 import EntryContext from "./EntryContext";
-import MoodSelector from "./MoodSelector";
 
 class NewEntryForm extends React.Component {
   apiLink = "http://localhost:5000";
@@ -15,7 +14,13 @@ class NewEntryForm extends React.Component {
     content: "",
     contextOne: "",
     contextTwo: "",
-    emotions: [],
+    neutral: false,
+    joyful: false,
+    motivated: false,
+    satisfied: false,
+    sad: false,
+    stressed: false,
+    angry: false,
     edited: "no",
   };
 
@@ -39,6 +44,63 @@ class NewEntryForm extends React.Component {
     this.setState({ [input]: event.target.value });
   };
 
+  // Functions to toggle the moods button
+  toggleJoyful = () => {
+    let { joyful } = this.state;
+    joyful = !joyful;
+    this.setState({
+      joyful,
+    });
+  };
+
+  toggleMotivated = () => {
+    let { motivated } = this.state;
+    motivated = !motivated;
+    this.setState({
+      motivated,
+    });
+  };
+
+  toggleSatisfied = () => {
+    let { satisfied } = this.state;
+    satisfied = !satisfied;
+    this.setState({
+      satisfied,
+    });
+  };
+
+  toggleStressed = () => {
+    let { stressed } = this.state;
+    stressed = !stressed;
+    this.setState({
+      stressed,
+    });
+  };
+
+  toggleSad = () => {
+    let { sad } = this.state;
+    sad = !sad;
+    this.setState({
+      sad,
+    });
+  };
+
+  toggleAngry = () => {
+    let { angry } = this.state;
+    angry = !angry;
+    this.setState({
+      angry,
+    });
+  };
+
+  toggleNeutral = () => {
+    let { neutral } = this.state;
+    neutral = !neutral;
+    this.setState({
+      neutral,
+    });
+  };
+
   render() {
     const {
       step,
@@ -46,7 +108,7 @@ class NewEntryForm extends React.Component {
       content,
       contextOne,
       contextTwo,
-      emotions,
+      moods,
       edited,
     } = this.state;
     const values = {
@@ -55,7 +117,7 @@ class NewEntryForm extends React.Component {
       content,
       contextOne,
       contextTwo,
-      emotions,
+      moods,
       edited,
     };
     switch (step) {
@@ -69,22 +131,24 @@ class NewEntryForm extends React.Component {
         );
       case 2:
         return (
-          <EntryContext
-            nextStep={this.nextStep}
-            previousStep={this.previousStep}
-            values={values}
-            handleChange={this.handleChange}
-          />
+          <>
+            <EntryContext
+              nextStep={this.nextStep}
+              previousStep={this.previousStep}
+              values={values}
+              handleChange={this.handleChange}
+              toggleJoyful={this.toggleJoyful}
+              toggleMotivated={this.toggleMotivated}
+              toggleSatisfied={this.toggleSatisfied}
+              toggleStressed={this.toggleStressed}
+              toggleSad={this.toggleSad}
+              toggleAngry={this.toggleAngry}
+              toggleNeutral={this.toggleNeutral}
+            />
+          </>
         );
       case 3:
-        return (
-          <MoodSelector
-            nextStep={this.nextStep}
-            previousStep={this.previousStep}
-            handleChange={this.handleChange}
-            values={values}
-          />
-        );
+        return <h1>Placeholder</h1>;
       case 4:
         return <h1>Entry Confirm</h1>;
     }

@@ -1,31 +1,35 @@
+// COMPONENT LEFT UNUSED - DELETE IF NOT NEEDED BY THE END
+
 import React from "react";
 
-const MoodSelector = (props) => {
-  const next = (event) => {
+class MoodSelector extends React.Component {
+  next = (event) => {
     event.preventDefault();
-    props.nextStep();
+    this.props.nextStep();
   };
 
-  const back = (event) => {
+  back = (event) => {
     event.preventDefault();
-    props.previousStep();
+    this.props.previousStep();
   };
 
-  const { values } = props;
-  return (
-    <section>
-      <label className="entry-form__label">Select Moods</label>
-      <div className="entry-form__button-wrapper-context">
-        <button className="entry-form__back-btn" onClick={back}>
-          <span className="entry-form__back-arrow">{`<`}</span>
-          Back
-        </button>
-        <button className="entry-form__next-btn" onClick={next}>
-          Next<span className="entry-form__next-arrow">{`>`}</span>
-        </button>
-      </div>
-    </section>
-  );
-};
+  render() {
+    const { values } = this.props;
+    return (
+      <section>
+        <label className="entry-form__label">Select Moods</label>
+        <div className="entry-form__button-wrapper-context">
+          <button className="entry-form__back-btn" onClick={this.back}>
+            <span className="entry-form__back-arrow">{`<`}</span>
+            Back
+          </button>
+          <button className="entry-form__next-btn" onClick={this.next}>
+            Next<span className="entry-form__next-arrow">{`>`}</span>
+          </button>
+        </div>
+      </section>
+    );
+  }
+}
 
 export default MoodSelector;
