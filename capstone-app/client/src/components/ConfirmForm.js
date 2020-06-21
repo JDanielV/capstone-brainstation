@@ -5,6 +5,12 @@ const ConfirmForm = (props) => {
     event.preventDefault();
     props.previousStep();
   };
+
+  const onClick = (event) => {
+    event.preventDefault();
+    props.handleSubmit(event);
+  };
+
   return (
     <section className="entry-form__confirm">
       <h1 className="entry-form__confirm-banner">Confirm Entry?</h1>
@@ -17,7 +23,11 @@ const ConfirmForm = (props) => {
           <span className="entry-form__back-arrow">{`<`}</span>
           Back
         </button>
-        <button type="submit" className="entry-form__confirm-btn">
+        <button
+          type="submit"
+          className="entry-form__confirm-btn"
+          onClick={onClick}
+        >
           Submit
         </button>
       </div>

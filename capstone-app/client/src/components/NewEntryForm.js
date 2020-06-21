@@ -33,6 +33,50 @@ class NewEntryForm extends React.Component {
     pressedNeutral: true,
   };
 
+  // Function to handle submit when "submit" btn
+  // is clicked in ConfirmForm.js
+
+  handleSubmit = (
+    event
+    // id,
+    // title,
+    // content,
+    // contextOne,
+    // contextTwo,
+    // neutral,
+    // joyful,
+    // motivated,
+    // satisfied,
+    // sad,
+    // stressed,
+    // angry,
+    // edited
+  ) => {
+    event.preventDefault();
+    axios
+      .post(`${this.apiLink}${this.usersEndpoint}/${this.state.id}`, {
+        id: this.state.id,
+        title: this.state.title,
+        content: this.state.content,
+        contextOne: this.state.contextOne,
+        contextTwo: this.state.contextTwo,
+        neutral: this.state.neutral,
+        joyful: this.state.joyful,
+        motivated: this.state.motivated,
+        satisfied: this.state.satisfied,
+        sad: this.state.sad,
+        stressed: this.state.stressed,
+        angry: this.state.angry,
+        edited: this.state.edited,
+      })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   // Continue to next step in the form
   nextStep = () => {
     const { step } = this.state;
@@ -174,7 +218,6 @@ class NewEntryForm extends React.Component {
   render() {
     const {
       step,
-      id,
       title,
       content,
       contextOne,
@@ -238,7 +281,12 @@ class NewEntryForm extends React.Component {
           </>
         );
       case 3:
-        return <ConfirmForm previousStep={this.previousStep} />;
+        return (
+          <ConfirmForm
+            previousStep={this.previousStep}
+            handleSubmit={this.handleSubmit}
+          />
+        );
     }
   }
 }

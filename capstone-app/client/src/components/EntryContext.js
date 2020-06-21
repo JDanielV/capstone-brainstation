@@ -22,7 +22,7 @@ class EntryContext extends React.Component {
             id="contextInputOne"
             type="text"
             name="contextInputOne"
-            placeholder="Optional: Provide URL as context"
+            placeholder="Maybe a location?"
             onChange={this.props.handleChange("contextOne")}
             defaultValue={values.contextOne}
           />
@@ -31,7 +31,7 @@ class EntryContext extends React.Component {
             id="contextInputTwo"
             type="text"
             name="contextInputTwo"
-            placeholder="Optional: Provide URL as context"
+            placeholder="How about an link to a picture?"
             onChange={this.props.handleChange("contextTwo")}
             defaultValue={values.contextTwo}
           />

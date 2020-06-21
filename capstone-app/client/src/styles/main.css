@@ -272,6 +272,26 @@
   outline: none;
 }
 
+.entry-form__input::-webkit-input-placeholder {
+  font-style: italic;
+  color: gray;
+}
+
+.entry-form__input:-ms-input-placeholder {
+  font-style: italic;
+  color: gray;
+}
+
+.entry-form__input::-ms-input-placeholder {
+  font-style: italic;
+  color: gray;
+}
+
+.entry-form__input::placeholder {
+  font-style: italic;
+  color: gray;
+}
+
 .entry-form__text {
   font-size: 1rem;
   color: white;
@@ -297,6 +317,26 @@
 .entry-form__textarea:focus {
   border: 2px solid white;
   outline: none;
+}
+
+.entry-form__textarea::-webkit-input-placeholder {
+  font-style: italic;
+  color: gray;
+}
+
+.entry-form__textarea:-ms-input-placeholder {
+  font-style: italic;
+  color: gray;
+}
+
+.entry-form__textarea::-ms-input-placeholder {
+  font-style: italic;
+  color: gray;
+}
+
+.entry-form__textarea::placeholder {
+  font-style: italic;
+  color: gray;
 }
 
 .entry-form__button-wrapper {

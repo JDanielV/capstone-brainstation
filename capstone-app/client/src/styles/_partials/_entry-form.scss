@@ -34,6 +34,11 @@
       border: 2px solid white;
       outline: none;
     }
+
+    &::placeholder {
+      font-style: italic;
+      color: gray;
+    }
   }
 
   &__text {
@@ -60,6 +65,10 @@
     &:focus {
       border: 2px solid white;
       outline: none;
+    }
+    &::placeholder {
+      font-style: italic;
+      color: gray;
     }
   }
 
