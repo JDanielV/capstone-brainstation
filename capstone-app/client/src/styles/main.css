@@ -346,7 +346,7 @@
       flex-wrap: wrap;
 }
 
-.entry-form__mood-button {
+.entry-form__mood-button-unpressed {
   font-family: "Barlow", sans-serif;
   font-weight: 300;
   font-size: 1.2rem;
@@ -362,10 +362,20 @@
   cursor: pointer;
 }
 
-.entry-form__mood-button:active {
-  background-color: white;
-  color: black;
+.entry-form__mood-button-pressed {
+  font-family: "Barlow", sans-serif;
   font-weight: 400;
+  font-size: 1.2rem;
+  color: black;
+  width: 7rem;
+  height: 2rem;
+  border: 1px solid white;
+  border-radius: 4px;
+  background-color: white;
+  padding-bottom: 0.25rem;
+  margin: 0.5rem;
+  outline: none;
+  cursor: pointer;
 }
 
 .entry-form__next-btn {

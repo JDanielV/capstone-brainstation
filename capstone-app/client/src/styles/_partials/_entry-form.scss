@@ -91,7 +91,7 @@
     flex-wrap: wrap;
   }
 
-  &__mood-button {
+  &__mood-button-unpressed {
     font-family: "Barlow", sans-serif;
     font-weight: 300;
     font-size: $normal-font;
@@ -105,12 +105,22 @@
     margin: 0.5rem;
     outline: none;
     cursor: pointer;
+  }
 
-    &:active {
-      background-color: white;
-      color: black;
-      font-weight: 400;
-    }
+  &__mood-button-pressed {
+    font-family: "Barlow", sans-serif;
+    font-weight: 400;
+    font-size: $normal-font;
+    color: black;
+    width: 7rem;
+    height: 2rem;
+    border: 1px solid white;
+    border-radius: 4px;
+    background-color: white;
+    padding-bottom: 0.25rem;
+    margin: 0.5rem;
+    outline: none;
+    cursor: pointer;
   }
 
   &__next-btn {
