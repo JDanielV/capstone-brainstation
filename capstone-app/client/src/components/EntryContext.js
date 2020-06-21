@@ -1,71 +1,6 @@
 import React from "react";
 
 class EntryContext extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      pressedJoyful: true,
-      pressedMotivated: true,
-      pressedSatisfied: true,
-      pressedStressed: true,
-      pressedSad: true,
-      pressedAngry: true,
-      pressedNeutral: true,
-    };
-    this.bgJoyful = this.bgJoyful.bind(this);
-    this.bgMotivated = this.bgMotivated.bind(this);
-    this.bgSatisfied = this.bgSatisfied.bind(this);
-    this.bgStressed = this.bgStressed.bind(this);
-    this.bgSad = this.bgSad.bind(this);
-    this.bgAngry = this.bgAngry.bind(this);
-    this.bgNeutral = this.bgNeutral.bind(this);
-  }
-
-  // Another bunch of functions, one per button. Yikes
-  bgJoyful() {
-    this.setState({
-      pressedJoyful: !this.state.pressedJoyful,
-    });
-  }
-
-  bgMotivated() {
-    this.setState({
-      pressedMotivated: !this.state.pressedMotivated,
-    });
-  }
-
-  bgSatisfied() {
-    this.setState({
-      pressedSatisfied: !this.state.pressedSatisfied,
-    });
-  }
-
-  bgStressed() {
-    this.setState({
-      pressedStressed: !this.state.pressedStressed,
-    });
-  }
-
-  bgSad() {
-    this.setState({
-      pressedSad: !this.state.pressedSad,
-    });
-  }
-
-  bgAngry() {
-    this.setState({
-      pressedAngry: !this.state.pressedAngry,
-    });
-  }
-
-  bgNeutral() {
-    this.setState({
-      pressedNeutral: !this.state.pressedNeutral,
-    });
-  }
-
-  // END OF FUNCTION HELL
-
   next = (event) => {
     event.preventDefault();
     this.props.nextStep();
@@ -117,13 +52,13 @@ class EntryContext extends React.Component {
                 <button
                   type="button"
                   className={
-                    this.state.pressedJoyful
+                    values.pressedJoyful
                       ? "entry-form__mood-button-unpressed"
                       : "entry-form__mood-button-pressed"
                   }
                   onClick={() => {
                     this.props.toggleJoyful();
-                    this.bgJoyful();
+                    this.props.bgJoyful();
                   }}
                 >
                   Joyful
@@ -131,13 +66,13 @@ class EntryContext extends React.Component {
                 <button
                   type="button"
                   className={
-                    this.state.pressedMotivated
+                    values.pressedMotivated
                       ? "entry-form__mood-button-unpressed"
                       : "entry-form__mood-button-pressed"
                   }
                   onClick={() => {
                     this.props.toggleMotivated();
-                    this.bgMotivated();
+                    this.props.bgMotivated();
                   }}
                 >
                   Motivated
@@ -145,13 +80,13 @@ class EntryContext extends React.Component {
                 <button
                   type="button"
                   className={
-                    this.state.pressedSatisfied
+                    values.pressedSatisfied
                       ? "entry-form__mood-button-unpressed"
                       : "entry-form__mood-button-pressed"
                   }
                   onClick={() => {
                     this.props.toggleSatisfied();
-                    this.bgSatisfied();
+                    this.props.bgSatisfied();
                   }}
                 >
                   Satisfied
@@ -159,13 +94,13 @@ class EntryContext extends React.Component {
                 <button
                   type="button"
                   className={
-                    this.state.pressedStressed
+                    values.pressedStressed
                       ? "entry-form__mood-button-unpressed"
                       : "entry-form__mood-button-pressed"
                   }
                   onClick={() => {
                     this.props.toggleStressed();
-                    this.bgStressed();
+                    this.props.bgStressed();
                   }}
                 >
                   Stressed
@@ -173,13 +108,13 @@ class EntryContext extends React.Component {
                 <button
                   type="button"
                   className={
-                    this.state.pressedSad
+                    values.pressedSad
                       ? "entry-form__mood-button-unpressed"
                       : "entry-form__mood-button-pressed"
                   }
                   onClick={() => {
                     this.props.toggleSad();
-                    this.bgSad();
+                    this.props.bgSad();
                   }}
                 >
                   Sad
@@ -187,13 +122,13 @@ class EntryContext extends React.Component {
                 <button
                   type="button"
                   className={
-                    this.state.pressedAngry
+                    values.pressedAngry
                       ? "entry-form__mood-button-unpressed"
                       : "entry-form__mood-button-pressed"
                   }
                   onClick={() => {
                     this.props.toggleAngry();
-                    this.bgAngry();
+                    this.props.bgAngry();
                   }}
                 >
                   Angry
@@ -202,13 +137,13 @@ class EntryContext extends React.Component {
                 <button
                   type="button"
                   className={
-                    this.state.pressedNeutral
+                    values.pressedNeutral
                       ? "entry-form__mood-button-unpressed"
                       : "entry-form__mood-button-pressed"
                   }
                   onClick={() => {
                     this.props.toggleNeutral();
-                    this.bgNeutral();
+                    this.props.bgNeutral();
                   }}
                 >
                   Neutral

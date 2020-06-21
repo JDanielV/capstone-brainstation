@@ -247,6 +247,7 @@
   display: block;
   font-size: 2rem;
   margin-bottom: 0.5rem;
+  font-weight: 300;
 }
 
 .entry-form__input {
@@ -435,6 +436,50 @@
   font-size: 2rem;
   padding-bottom: 0.3rem;
   margin-right: 0.5rem;
+}
+
+.entry-form__confirm {
+  margin-top: 2rem;
+}
+
+.entry-form__confirm-banner {
+  font-size: 3rem;
+  font-family: "Barlow", sans-serif;
+  font-weight: 300;
+}
+
+.entry-form__button-wrapper-confirm {
+  margin-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.entry-form__confirm-btn {
+  margin-top: 1rem;
+  font-family: "Barlow", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  border: 1px solid white;
+  color: black;
+  background-color: white;
+  border-radius: 5px;
+  height: 3rem;
+  width: 6rem;
+  font-size: 1.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
 }
 
 body {

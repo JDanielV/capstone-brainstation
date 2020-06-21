@@ -11,6 +11,7 @@
     display: block;
     font-size: $header-font;
     margin-bottom: 0.5rem;
+    font-weight: 300;
   }
 
   &__input {
@@ -168,5 +169,39 @@
     font-size: 2rem;
     padding-bottom: 0.3rem;
     margin-right: 0.5rem;
+  }
+
+  &__confirm {
+    margin-top: 2rem;
+
+    &-banner {
+      font-size: 3rem;
+      font-family: "Barlow", sans-serif;
+      font-weight: 300;
+    }
+  }
+
+  &__button-wrapper-confirm {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__confirm-btn {
+    margin-top: 1rem;
+    font-family: "Barlow", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    border: 1px solid white;
+    color: black;
+    background-color: white;
+    border-radius: 5px;
+    height: 3rem;
+    width: 6rem;
+    font-size: $normal-font;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
   }
 }

@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import EntryContent from "./EntryContent";
 import EntryContext from "./EntryContext";
+import ConfirmForm from "./ConfirmForm";
 
 class NewEntryForm extends React.Component {
   apiLink = "http://localhost:5000";
@@ -22,6 +23,14 @@ class NewEntryForm extends React.Component {
     stressed: false,
     angry: false,
     edited: "no",
+
+    pressedJoyful: true,
+    pressedMotivated: true,
+    pressedSatisfied: true,
+    pressedStressed: true,
+    pressedSad: true,
+    pressedAngry: true,
+    pressedNeutral: true,
   };
 
   // Continue to next step in the form
@@ -44,7 +53,8 @@ class NewEntryForm extends React.Component {
     this.setState({ [input]: event.target.value });
   };
 
-  // Functions to toggle the moods button
+  // Functions to toggle the moods true/false
+  // so many functions, I'm sure there's a better way to do this
   toggleJoyful = () => {
     let { joyful } = this.state;
     joyful = !joyful;
@@ -101,6 +111,66 @@ class NewEntryForm extends React.Component {
     });
   };
 
+  // Another bunch of functions, one per button. Yikes
+
+  bgJoyful = () => {
+    let { pressedJoyful } = this.state;
+    pressedJoyful = !pressedJoyful;
+    this.setState({
+      pressedJoyful,
+    });
+  };
+
+  bgMotivated = () => {
+    let { pressedMotivated } = this.state;
+    pressedMotivated = !pressedMotivated;
+    this.setState({
+      pressedMotivated,
+    });
+  };
+
+  bgSatisfied = () => {
+    let { pressedSatisfied } = this.state;
+    pressedSatisfied = !pressedSatisfied;
+    this.setState({
+      pressedSatisfied,
+    });
+  };
+
+  bgStressed = () => {
+    let { pressedStressed } = this.state;
+    pressedStressed = !pressedStressed;
+    this.setState({
+      pressedStressed,
+    });
+  };
+
+  bgSad = () => {
+    let { pressedSad } = this.state;
+    pressedSad = !pressedSad;
+    this.setState({
+      pressedSad,
+    });
+  };
+
+  bgAngry = () => {
+    let { pressedAngry } = this.state;
+    pressedAngry = !pressedAngry;
+    this.setState({
+      pressedAngry,
+    });
+  };
+
+  bgNeutral = () => {
+    let { pressedNeutral } = this.state;
+    pressedNeutral = !pressedNeutral;
+    this.setState({
+      pressedNeutral,
+    });
+  };
+
+  // FUNCTION HELL ENDS HERE
+
   render() {
     const {
       step,
@@ -108,8 +178,14 @@ class NewEntryForm extends React.Component {
       content,
       contextOne,
       contextTwo,
-      moods,
       edited,
+      pressedJoyful,
+      pressedMotivated,
+      pressedSatisfied,
+      pressedStressed,
+      pressedSad,
+      pressedAngry,
+      pressedNeutral,
     } = this.state;
     const values = {
       step,
@@ -117,8 +193,14 @@ class NewEntryForm extends React.Component {
       content,
       contextOne,
       contextTwo,
-      moods,
       edited,
+      pressedJoyful,
+      pressedMotivated,
+      pressedSatisfied,
+      pressedStressed,
+      pressedSad,
+      pressedAngry,
+      pressedNeutral,
     };
     switch (step) {
       case 1:
@@ -144,13 +226,18 @@ class NewEntryForm extends React.Component {
               toggleSad={this.toggleSad}
               toggleAngry={this.toggleAngry}
               toggleNeutral={this.toggleNeutral}
+              bgJoyful={this.bgJoyful}
+              bgMotivated={this.bgMotivated}
+              bgSatisfied={this.bgSatisfied}
+              bgStressed={this.bgStressed}
+              bgSad={this.bgSad}
+              bgAngry={this.bgAngry}
+              bgNeutral={this.bgNeutral}
             />
           </>
         );
       case 3:
-        return <h1>Placeholder</h1>;
-      case 4:
-        return <h1>Entry Confirm</h1>;
+        return <ConfirmForm previousStep={this.previousStep} />;
     }
   }
 }
