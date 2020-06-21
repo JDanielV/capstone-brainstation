@@ -10,7 +10,7 @@ class NewEntryForm extends React.Component {
 
   state = {
     step: 1,
-    id: this.props.user.id, //still need to pass this prop
+    id: this.props.user.id,
     title: "",
     content: "",
     contextOne: "",
@@ -174,6 +174,7 @@ class NewEntryForm extends React.Component {
   render() {
     const {
       step,
+      id,
       title,
       content,
       contextOne,

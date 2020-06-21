@@ -243,6 +243,10 @@
   position: relative;
 }
 
+.entry-form__link {
+  text-decoration: none;
+}
+
 .entry-form__label {
   display: block;
   font-size: 2rem;
@@ -299,12 +303,13 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   position: absolute;
   bottom: -1rem;
   right: 0;
+  width: 100%;
 }
 
 .entry-form__button-wrapper-context {
@@ -358,7 +363,7 @@
   border-radius: 4px;
   background-color: transparent;
   padding-bottom: 0.25rem;
-  margin: 0.5rem;
+  margin: 0.7rem;
   outline: none;
   cursor: pointer;
 }
@@ -374,7 +379,7 @@
   border-radius: 4px;
   background-color: white;
   padding-bottom: 0.25rem;
-  margin: 0.5rem;
+  margin: 0.7rem;
   outline: none;
   cursor: pointer;
 }

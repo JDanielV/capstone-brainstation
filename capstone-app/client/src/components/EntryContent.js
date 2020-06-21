@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const EntryContent = (props) => {
   const next = (event) => {
@@ -36,6 +37,12 @@ const EntryContent = (props) => {
           defaultValue={values.content}
         />
         <div className="entry-form__button-wrapper">
+          <Link to={`/users/${values.id}`} className="entry-form__link">
+            <button className="entry-form__back-btn">
+              <span className="entry-form__back-arrow">{`<`}</span>
+              Home
+            </button>
+          </Link>
           <button className="entry-form__next-btn" onClick={next}>
             Next<span className="entry-form__next-arrow">{`>`}</span>
           </button>
