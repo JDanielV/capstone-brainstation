@@ -1,0 +1,13 @@
+@import "./variables";
+
+.mood-chart {
+  font-family: "Barlow", sans-serif;
+  &__container {
+    background-color: $dark-bg;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+  }
+}

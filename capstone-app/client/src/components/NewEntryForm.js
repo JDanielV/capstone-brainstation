@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import EntryContent from "./EntryContent";
 import EntryContext from "./EntryContext";
 import ConfirmForm from "./ConfirmForm";
@@ -57,29 +56,6 @@ class NewEntryForm extends React.Component {
       edited: this.state.edited,
     };
     this.props.getFormValues(event, formValues);
-
-    // axios
-    //   .post(`${this.apiLink}${this.usersEndpoint}/${this.state.id}`, {
-    //     id: this.state.id,
-    //     title: this.state.title,
-    //     content: this.state.content,
-    //     contextOne: this.state.contextOne,
-    //     contextTwo: this.state.contextTwo,
-    //     neutral: this.state.neutral,
-    //     joyful: this.state.joyful,
-    //     motivated: this.state.motivated,
-    //     satisfied: this.state.satisfied,
-    //     sad: this.state.sad,
-    //     stressed: this.state.stressed,
-    //     angry: this.state.angry,
-    //     edited: this.state.edited,
-    //   })
-    //   .then((response) => {
-    //     this.props.history.push(`/users/${this.state.id}/entries`);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
   };
 
   // Continue to next step in the form
