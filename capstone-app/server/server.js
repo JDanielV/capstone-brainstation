@@ -8,6 +8,7 @@ const getEntriesList = require("./controllers/getEntriesList");
 const getUserDetails = require("./controllers/getUserDetails");
 const getUserList = require("./controllers/getUserList");
 const postEntry = require("./controllers/postEntry");
+const getEntryDetails = require("./controllers/getEntryDetails");
 
 // Middleware here
 
@@ -24,6 +25,11 @@ app.get("/users", (req, res) => {
 // Route to get list of entries of selected user
 app.get("/users/:userId/entries", (req, res) => {
   res.json(getEntriesList(req.params.userId));
+});
+
+// Route to get details of selected entry
+app.get("/users/:id/entries/:entryId", (req, res) => {
+  res.json(getEntryDetails(req.params.id, req.params.entryId));
 });
 
 //Route to get all details of the selected user

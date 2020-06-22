@@ -1,10 +1,11 @@
 import React from "react";
 import Header from "./Header";
 import UserGreeting from "./UserGreeting";
-import { Route } from "react-router-dom";
+import { Route, withRouter } from "react-router-dom";
 import axios from "axios";
 import EntriesList from "./EntriesList";
 import NewEntryForm from "./NewEntryForm";
+import EntryDetail from "./EntryDetail";
 
 class Home extends React.Component {
   apiLink = "http://localhost:5000";
@@ -14,7 +15,6 @@ class Home extends React.Component {
     userDetails: [],
     entriesList: [],
     formValues: {},
-    updated: false,
   };
 
   // Function to catch form values
@@ -60,21 +60,7 @@ class Home extends React.Component {
   componentWillUnmount() {
     console.log("Home has unmounted");
   }
-  // componentDidUpdate(prevProps, prevState) {
-  //   const oldState = prevState.updated;
-  //   const newState = this.state.updated;
-  //   if (oldState === newState) {
-  //     console.log("same stuff");
-  //   } else {
-  //     console.log("new stuff");
-  //     this.getEntriesList(this.state.userDetails.id);
-  //     this.getUserDetails(this.state.userDetails.id);
-  //   }
-  // }
 
-  // componentDidUpdate(prevProps, prevState) {
-  //   console.log("Component did update");
-  // }
   render() {
     return (
       <>
@@ -92,6 +78,7 @@ class Home extends React.Component {
           />
           <Route
             path="/users/:id/entries"
+            exact
             render={(props) => (
               <EntriesList
                 {...props}
@@ -101,6 +88,10 @@ class Home extends React.Component {
                 getEntriesList={this.getEntriesList}
               />
             )}
+          />
+          <Route
+            path={`/users/:id/entries/:entryId`}
+            render={(props) => <EntryDetail {...props} />}
           />
           <Route
             path="/users/:id/new-entry"
@@ -118,4 +109,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default withRouter(Home);

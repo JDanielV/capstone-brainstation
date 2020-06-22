@@ -1,10 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
 class EntriesList extends React.Component {
   componentDidMount() {
     this.props.getUserDetails(this.props.user.id);
     this.props.getEntriesList(this.props.user.id);
+    console.log(this.props);
   }
   sortByDate(array) {
     const sortedArray = array.sort((a, b) => b.timestamp - a.timestamp);
@@ -39,10 +40,15 @@ class EntriesList extends React.Component {
           <ul className="entries-list__ul">
             {this.sortByDate(this.props.entriesList).map((entry) => (
               <li key={entry.entryId} className="entries-list__li">
-                <div className="entries-list__li-text-container">
-                  <h4 className="entries-list__li-title">{entry.title}</h4>
-                  <p className="entries-list__li-preview">{entry.content}</p>
-                </div>
+                <Link
+                  to={`/users/${entry.id}/entries/${entry.entryId}`}
+                  className="entries-list__li-link"
+                >
+                  <div className="entries-list__li-text-container">
+                    <h4 className="entries-list__li-title">{entry.title}</h4>
+                    <p className="entries-list__li-preview">{entry.content}</p>
+                  </div>
+                </Link>
                 <div className="entries-list__li-emotions-chart">
                   <p className="entries-list__li-preview">
                     {this.formatDate(entry.timestamp)}
@@ -57,4 +63,4 @@ class EntriesList extends React.Component {
   }
 }
 
-export default EntriesList;
+export default withRouter(EntriesList);

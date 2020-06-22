@@ -203,8 +203,13 @@
   padding: 1.5rem 0;
 }
 
-.entries-list__li-text-container {
+.entries-list__li-link {
   width: 60%;
+  text-decoration: none;
+}
+
+.entries-list__li-text-container {
+  color: white;
 }
 
 .entries-list__li-title {
