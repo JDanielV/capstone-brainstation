@@ -218,4 +218,8 @@
     align-items: center;
     cursor: pointer;
   }
+
+  &__confirm-link {
+    text-decoration: none;
+  }
 }

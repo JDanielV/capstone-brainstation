@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ConfirmForm = (props) => {
   const back = (event) => {
@@ -23,13 +24,18 @@ const ConfirmForm = (props) => {
           <span className="entry-form__back-arrow">{`<`}</span>
           Back
         </button>
-        <button
-          type="submit"
-          className="entry-form__confirm-btn"
-          onClick={onClick}
+        <Link
+          to={`/users/${props.values.id}`}
+          className="entry-form__confirm-link"
         >
-          Submit
-        </button>
+          <button
+            type="submit"
+            className="entry-form__confirm-btn"
+            onClick={onClick}
+          >
+            Submit
+          </button>
+        </Link>
       </div>
     </section>
   );
