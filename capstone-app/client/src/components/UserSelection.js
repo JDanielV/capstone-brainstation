@@ -17,7 +17,6 @@ const UserSelection = ({ users }) => {
             <li className="user-selection__li">{user.username}</li>
           </Link>
         ))}
-        {/* <li className="user-selection__li">Aracely</li> */}
       </ul>
       <span className="user-selection__add-new">Add New User</span>
     </section>
