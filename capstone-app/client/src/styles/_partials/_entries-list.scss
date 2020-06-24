@@ -37,8 +37,8 @@
 
   &__li {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
     border-bottom: 1px solid white;
     border-top: 1px solid white;
     padding: 1.5rem 0;
@@ -50,14 +50,20 @@
 
     &-text-container {
       color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.8rem;
     }
 
     &-title {
-      margin-top: 0;
-      margin-bottom: 1rem;
+      margin: 0;
       text-overflow: ellipsis;
       overflow: hidden;
       white-space: nowrap;
+      width: 13rem;
+      font-weight: 500;
+      color: white;
     }
 
     &-preview {
@@ -68,11 +74,20 @@
       height: 3.7rem;
     }
 
-    &-emotions-chart {
-      height: 6rem;
-      width: 6rem;
+    &-timestamp-container {
+      height: 1.7rem;
+      width: 5rem;
       background-color: $dark-bg;
       border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &-timestamp {
+      font-size: 0.8rem;
+      color: white;
+      margin: 0;
     }
   }
 }

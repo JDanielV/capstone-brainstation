@@ -1,5 +1,5 @@
 import React from "react";
-import { Bar, Pie, defaults } from "react-chartjs-2";
+import { Bar, defaults } from "react-chartjs-2";
 
 const MoodChart = ({ entriesList }) => {
   let moodCount = {

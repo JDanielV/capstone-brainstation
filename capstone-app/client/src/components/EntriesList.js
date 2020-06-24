@@ -42,20 +42,20 @@ class EntriesList extends React.Component {
           <ul className="entries-list__ul">
             {this.sortByDate(this.props.entriesList).map((entry) => (
               <li key={entry.entryId} className="entries-list__li">
-                <Link
-                  to={`/users/${entry.id}/entries/${entry.entryId}`}
-                  className="entries-list__li-link"
-                >
-                  <div className="entries-list__li-text-container">
+                <div className="entries-list__li-text-container">
+                  <Link
+                    to={`/users/${entry.id}/entries/${entry.entryId}`}
+                    className="entries-list__li-link"
+                  >
                     <h4 className="entries-list__li-title">{entry.title}</h4>
-                    <p className="entries-list__li-preview">{entry.content}</p>
+                  </Link>
+                  <div className="entries-list__li-timestamp-container">
+                    <p className="entries-list__li-timestamp">
+                      {this.formatDate(entry.timestamp)}
+                    </p>
                   </div>
-                </Link>
-                <div className="entries-list__li-emotions-chart">
-                  <p className="entries-list__li-preview">
-                    {this.formatDate(entry.timestamp)}
-                  </p>
                 </div>
+                <p className="entries-list__li-preview">{entry.content}</p>
               </li>
             ))}
           </ul>

@@ -13,10 +13,11 @@
   }
 
   &__welcome {
-    font-size: $header-font;
+    font-size: 1.9rem;
     font-weight: 200;
     width: 100%;
     margin-top: 0;
+    font-style: italic;
   }
 
   &__cta {

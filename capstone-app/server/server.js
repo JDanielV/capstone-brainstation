@@ -9,6 +9,7 @@ const getUserDetails = require("./controllers/getUserDetails");
 const getUserList = require("./controllers/getUserList");
 const postEntry = require("./controllers/postEntry");
 const getEntryDetails = require("./controllers/getEntryDetails");
+const deleteEntry = require("./controllers/deleteEntry");
 
 // Middleware here
 
@@ -40,6 +41,11 @@ app.get("/users/:userId", (req, res) => {
 // Route to POST new entry
 app.post("/users/:userId", (req, res) => {
   res.json(postEntry(req.body));
+});
+
+// Route to DELETE an entry
+app.delete("/users/:id/entries/:entryId", (req, res) => {
+  res.json(deleteEntry(req.params.id, req.params.entryId));
 });
 
 // Listening to port 5000
