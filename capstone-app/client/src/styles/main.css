@@ -27,6 +27,10 @@
           justify-content: end;
 }
 
+.header__link--active {
+  font-weight: 500;
+}
+
 .header__ul-separator {
   font-size: 1.8rem;
 }

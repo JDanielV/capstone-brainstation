@@ -20,6 +20,10 @@
     color: white;
     text-decoration: none;
     justify-content: end;
+
+    &--active {
+      font-weight: 500;
+    }
   }
 
   &__ul-separator {
