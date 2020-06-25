@@ -4,7 +4,7 @@ import "./styles/main.css";
 import UserSelection from "./components/UserSelection";
 
 import Home from "./components/Home";
-import { Route, Redirect } from "react-router-dom";
+import { Route, Redirect, withRouter } from "react-router-dom";
 
 class App extends React.Component {
   apiLink = "http://localhost:5000";
@@ -18,6 +18,18 @@ class App extends React.Component {
     axios.get(`${this.apiLink}${this.usersEndpoint}`).then((response) => {
       this.setState({ users: response.data });
     });
+  };
+
+  createUser = (user) => {
+    const newUser = {
+      username: user,
+    };
+    axios
+      .post(`${this.apiLink}${this.usersEndpoint}`, newUser)
+      .then((response) => {
+        console.log(response);
+        this.props.history.push(`/users/${response.data.id}`);
+      });
   };
 
   componentDidMount() {
@@ -34,7 +46,13 @@ class App extends React.Component {
         <Route
           path="/users"
           exact
-          render={(props) => <UserSelection users={this.state.users} />}
+          render={(props) => (
+            <UserSelection
+              users={this.state.users}
+              createUser={this.createUser}
+              getUserList={this.getUserList}
+            />
+          )}
         />
         <Route
           path="/users/:id"
@@ -45,4 +63,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default withRouter(App);
