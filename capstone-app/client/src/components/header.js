@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Header = ({ user, entriesList }) => {
   if (user.id === undefined) {
-    return <p>Loading...</p>;
+    return <p>.</p>;
   }
   return (
     <header className="header">

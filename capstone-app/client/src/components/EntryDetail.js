@@ -98,7 +98,11 @@ class EntryDetail extends React.Component {
               className="entry-detail__delete-btn-bg"
               onClick={this.toggleDeleteButton}
             >
-              <img src="/bin.png" className="entry-detail__delete-btn" />
+              <img
+                src="/bin.png"
+                className="entry-detail__delete-btn"
+                alt="delete icon"
+              />
             </div>
             <button
               style={

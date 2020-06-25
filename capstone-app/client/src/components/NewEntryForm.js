@@ -271,6 +271,15 @@ class NewEntryForm extends React.Component {
             values={values}
           />
         );
+
+      default:
+        return (
+          <EntryContent
+            nextStep={this.nextStep}
+            values={values}
+            handleChange={this.handleChange}
+          />
+        );
     }
   }
 }

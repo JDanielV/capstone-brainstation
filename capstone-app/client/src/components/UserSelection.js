@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 class UserSelection extends React.Component {
   state = {
     showAddField: false,
+    message: [""],
   };
 
   toggleAddUser = () => {
@@ -16,7 +17,19 @@ class UserSelection extends React.Component {
 
   addUser = (event) => {
     event.preventDefault();
-    this.props.createUser(event.target.newUserInput.value);
+
+    if (
+      event.target.newUserInput.value === "" ||
+      event.target.newUserInput.value === null
+    )
+      this.setState = {
+        message: this.state.message.splice(
+          0,
+          1,
+          "* Make sure to fill the field!"
+        ),
+      };
+    else this.props.createUser(event.target.newUserInput.value);
   };
 
   componentDidMount() {
@@ -52,6 +65,7 @@ class UserSelection extends React.Component {
         >
           <input
             className="user-selection__add-new-input"
+            id="newUserInput"
             name="newUserInput"
           />
         </form>

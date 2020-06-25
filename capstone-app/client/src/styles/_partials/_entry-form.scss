@@ -222,4 +222,10 @@
   &__confirm-link {
     text-decoration: none;
   }
+
+  &__error {
+    display: block;
+    text-align: center;
+    margin-top: 2rem;
+  }
 }

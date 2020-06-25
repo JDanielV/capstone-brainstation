@@ -61,5 +61,20 @@
     margin-left: auto;
     margin-right: auto;
     margin: 0.7rem 0;
+
+    &-input {
+      margin-top: 1rem;
+      font-family: "Barlow";
+      background-color: transparent;
+      border: none;
+      outline: none;
+      font-size: 1.6rem;
+      width: 10rem;
+      font-weight: 300;
+      caret-color: white;
+      border-bottom: 2px solid white;
+      color: white;
+      padding-bottom: 0.5rem;
+    }
   }
 }

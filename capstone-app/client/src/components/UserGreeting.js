@@ -10,6 +10,18 @@ class UserGreeting extends React.Component {
     showDeleteBtn: false,
   };
 
+  userGreeting = () => {
+    let timeNow = new Date();
+    let hrs = timeNow.getHours();
+    let greeting = "";
+
+    if (hrs > 6) greeting = "Good morning"; // After 6am
+    if (hrs > 12) greeting = "Good afternoon"; // After 12pm
+    if (hrs > 17) greeting = "Good evening"; // After 5pm
+
+    return greeting;
+  };
+
   toggleDeleteButton = () => {
     let { showDeleteBtn } = this.state;
     showDeleteBtn = !showDeleteBtn;
@@ -38,17 +50,23 @@ class UserGreeting extends React.Component {
     const { user } = this.props;
     return (
       <div className="home__greeting-container">
-        <h1 className="home__greeting">Good evening, {user.username}.</h1>
+        <h1 className="home__greeting">{`${this.userGreeting()}, ${
+          user.username
+        }.`}</h1>
         <h3 className="home__question">Got something on your mind?</h3>
         <Link to="/users" className="home__link">
           <span className="home__change-user">Not {user.username}?</span>
         </Link>
-        <div className="entry-detail__delete-btn-container">
+        <div className="home__delete-btn-container">
           <div
-            className="entry-detail__delete-btn-bg"
+            className="home__delete-btn-bg"
             onClick={this.toggleDeleteButton}
           >
-            <img src="/bin.png" className="entry-detail__delete-btn" />
+            <img
+              src="/bin.png"
+              className="home__delete-btn"
+              alt="delete icon"
+            />
           </div>
           <button
             style={
@@ -57,7 +75,7 @@ class UserGreeting extends React.Component {
                 : { display: "none" }
             }
             id="entry-detail__toggle-btn"
-            className="entry-detail__delete-button"
+            className="home__delete-button"
             onClick={this.onDelete}
           >
             Delete User
