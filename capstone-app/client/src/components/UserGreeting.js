@@ -15,7 +15,7 @@ class UserGreeting extends React.Component {
     let hrs = timeNow.getHours();
     let greeting = "";
 
-    if (hrs > 6) greeting = "Good morning"; // After 6am
+    if (hrs >= 0) greeting = "Good morning"; // After 6am
     if (hrs > 12) greeting = "Good afternoon"; // After 12pm
     if (hrs > 17) greeting = "Good evening"; // After 5pm
 

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 class ConfirmForm extends React.Component {
   state = {
-    message: [""],
+    message: "",
   };
 
   back = (event) => {
@@ -20,13 +20,9 @@ class ConfirmForm extends React.Component {
       this.props.values.content === "" ||
       this.props.values.content === null
     ) {
-      this.setState = {
-        message: this.state.message.splice(
-          0,
-          1,
-          "*Make sure to fill Title and Content fields!"
-        ),
-      };
+      this.setState({
+        message: "Make sure to fill Title and Content fields!",
+      });
     } else {
       this.props.handleSubmit(event);
     }
@@ -62,7 +58,7 @@ class ConfirmForm extends React.Component {
             </button>
           </Link>
         </div>
-        <p className="entry-form__error">{this.state.message[0]}</p>
+        <p className="entry-form__error">{this.state.message}</p>
       </section>
     );
   }

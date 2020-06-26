@@ -354,7 +354,7 @@
 }
 
 .entry-form__label {
-  display: block;
+  display: inline-block;
   font-size: 2rem;
   margin-bottom: 0.5rem;
   font-weight: 300;
@@ -641,6 +641,7 @@
   display: block;
   text-align: center;
   margin-top: 2rem;
+  font-style: italic;
 }
 
 .mood-chart {
@@ -685,6 +686,7 @@
   overflow: auto;
   width: 100%;
   color: white;
+  overflow-wrap: break-word;
 }
 
 .entry-detail__context-moods-wrapper {

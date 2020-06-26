@@ -12,7 +12,7 @@
   }
 
   &__label {
-    display: block;
+    display: inline-block;
     font-size: $header-font;
     margin-bottom: 0.5rem;
     font-weight: 300;
@@ -227,5 +227,6 @@
     display: block;
     text-align: center;
     margin-top: 2rem;
+    font-style: italic;
   }
 }
